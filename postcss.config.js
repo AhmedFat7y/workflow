@@ -8,6 +8,5 @@ module.exports = {
 		'postcss-retina-bg-img': {
 			retinaSuffix: '@2x',
 		},
-		'postcss-easy-import': {},
 	},
 };

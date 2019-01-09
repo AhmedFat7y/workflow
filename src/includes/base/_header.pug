@@ -1,4 +1,21 @@
-header
-	h1
-		a(href="index.html")
-			| Hello World
+header.header-wrapper
+	.container.header
+
+		h1.header__logo-wrapper
+			a(href="index.html")
+				img(src="/images/logo/white.png")
+				span.visually-hidden Hello World
+		nav.header__nav
+			button.header__nav__toggle.burger
+				span
+				span
+				span
+			ul.header__nav__list
+				li.header__nav__item: a(href="#services") Services
+				li.header__nav__item: a(href="#workflow") Workflow
+				li.header__nav__item: a(href="#about") About
+				li.header__nav__item: a(href="#contact") Contact
+				li.header__nav__item: a(href="#contact") Team
+				li.header__nav__item: a(href="#contact") Clients
+				li.header__nav__item: a(href="#contact") Careers
+

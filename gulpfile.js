@@ -24,10 +24,10 @@ let dev = true;
 gulp.task('styles', () =>
 	gulp
 		.src('./src/styles/*.css')
-		.pipe(sourcemaps.init())
+		// .pipe(sourcemaps.init())
 		.pipe($.plumber())
 		.pipe($.postcss())
-		.pipe(sourcemaps.write('.'))
+		// .pipe(sourcemaps.write('.'))
 		.pipe(gulp.dest('.tmp/styles'))
 		.pipe(reload({ stream: true }))
 );
@@ -50,13 +50,12 @@ gulp.task('scripts', () => {
 function lint(files) {
 	return gulp
 		.src(files)
-		.pipe($.eslint({ fix: true }))
 		.pipe(reload({ stream: true, once: true }))
 		.pipe($.eslint.format())
 		.pipe($.if(!browserSync.active, $.eslint.failAfterError()));
 }
 
-gulp.task('lint:js', () => lint('src/scripts/**/*.js').pipe(gulp.dest('src/scripts')));
+gulp.task('lint:js', () => lint('src/scripts/**/*.js'));
 
 gulp.task('lint:test', () => lint('test/spec/**/*.js').pipe(gulp.dest('test/spec')));
 
